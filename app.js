@@ -19,7 +19,8 @@ const reviews=require("./routes/review.js");
 
 
 
-const MONGO_URL="mongodb://127.0.0.1:27017/Wonderlust"
+//const MONGO_URL="mongodb://127.0.0.1:27017/Wonderlust"
+const dbUrl = process.env.ATLASDB_URL;
 
 main().then(()=>{
 console.log("connected to DB");
@@ -30,7 +31,7 @@ console.log("connected to DB");
 
 
 async function main(){
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(dbUrl);
 }
 
 
